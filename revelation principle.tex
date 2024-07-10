@@ -1,0 +1,114 @@
+% ----------------------------------------------------------------
+% AMS-LaTeX Paper ************************************************
+% **** -----------------------------------------------------------
+\documentclass[10pt,reqno]{amsart}
+\usepackage{bbm}
+\usepackage{mathrsfs}
+\usepackage{amsfonts} %%% i.e. use 12pt type
+\usepackage[dvipsnames,usenames]{color}
+\textwidth=13.5cm %%% in the preamble; this will require
+\baselineskip=17pt %%% after \begin{document}
+\usepackage{graphicx,latexsym,bm,amsmath,amssymb,verbatim,multicol,lscape}
+\usepackage{enumerate}
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem} [section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{pro}{Proposition}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{exm}{Example}[section]
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\newtheorem{con}[thm]{Conjecture}
+\numberwithin{equation}{section}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\ind}{ind}
+\allowdisplaybreaks
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\SSS}{\stackrel}
+% ----------------------------------------------------------------
+\begin{document}
+
+\begin{defn}
+Let $A$ be an object set.We define a total order on $A$ by the one-to-one mapping
+$$\tau:A\rightarrow \{1,2,...,|A|\}$$
+that is,$\forall x\not=y\in A,x<y\Leftrightarrow \tau(x)<\tau(y)$.
+
+Let $L$ be the set that contains all of the $\tau$ .
+\end{defn}
+
+\begin{defn}
+A function $f:L^n\rightarrow A$ is called a choice function.
+\end{defn}
+
+\begin{defn}
+A choice function $f$ can be $strategically\quad manipulated$ by voter $i$ if for some $\tau_1,...,\tau_n\in L$ and some $\tau'_i\in L$ we have that $\tau_i(a)<\tau_i(a')$ where $a=f(\tau_1,...,\tau_n)$ and $a'=f(\tau_1,...\tau'_i,...,\tau_n)$ . That is, voter $i$ that prefers $a'$ to $a$ can ensure that $a'$ gets chosen rather than $a$ by strategically misrepresenting his preferences to be $\tau'_i$ rather than $\tau_i$ . $f$ is called $incentive\quad compatible$ if it cannot be manipulated.
+\end{defn}
+
+\begin{defn}
+A choice function $f$ is monotone if $f(\tau_1,...,\tau_i,...,\tau_n)=a\not=a'=f(\tau_1,...,\tau'_i,...,\tau_n)$ implies($\Rightarrow$) that $\tau_i(a')<\tau_i(a)$ and $\tau'_i(a)<\tau'_i(a')$ . That is if the choice changed from $a$ to $a'$ when a single voter $i$ changed his vote from $\tau_i$ to $\tau'_i$ then it must be because he switched his preference between $a$ and $a'$ .
+\end{defn}
+
+
+\begin{defn}
+Let $\vec{v}=(v_1,...,v_n)$ be an $n$-dimentional vector. We will denote the $(n-1)$-dimentional vector in which the $i$-th coordinate is removed by $\vec{v_{-i}}=(v_1,...,v_{i-1},v_{i+1},...,v_n)$ . Thus we have three equivalent notations:$\vec{v}=(v_1,...,v_n)=(v_i,\vec{v_{-i}})$ .
+\end{defn}
+
+\begin{defn}
+A game with(independent private values and) strict incomplete information for a set of $n$ players is given by the following ingredients:
+
+(i)For every player $i$ , a set of $actions$ $X_i$.
+
+(ii)For every player $i$ , a set of $types$ $T_i$ . A value $t_i\in T_i$ is the private information that $i$ has.
+
+(iii)For every player $i$ , a $utility$ $function$ $u_i:T_i\times X_1\times ...\times X_n\rightarrow \mathbb{R}$ , where $u_i(t_i,x_1,...,x_n)$ is the utility achieved by player $i$ , if his type is $t_i$ , and the profile of actions taken by all players is $x_1,...,x_n$ . 
+\end{defn}
+
+\begin{defn}
+(i)A strategy of a player $i$ is a function $s_i:T_i\rightarrow X_i$ .
+
+(ii)A strategy $s_i$ is a (weakly) dominant strategy if for every $t_i$ we have that the action $s_i(t_i)$ is a dominant strategy in the full information game defined by $t_i$ . Formally:For all $t_i$, all$x_{-i}$ and all $x_i'$ we have that $u_i(t_i,s_i(t_i),x_{-i})\ge u_i(t_i,x_i',x_{-i})$. A profile $s_1,...,s_n$ is called a dominant strategy equilibrium if each $s_i$ is a dominant strategy.
+\end{defn}
+
+\begin{defn}
+(i)A mechanism for $n$ players is given by
+
+(a)players' type spaces $T_1,...,T_n$ ,
+
+(b)players' action spaces $X_1,...,X_n$ ,
+
+(c)an alternative set $A$ ,
+
+(d)players' valuations functions $v_i:T_i\times A\rightarrow\mathbb{R}$ ,
+
+(e)an outcome function $a:X_1\times...\times X_n\rightarrow A$ and ,
+
+(f)payment functions $p_1,...,p_n$ , where $p_i:X_1\times...\times X_n\rightarrow\mathbb{R}$ .
+
+The game with strict incomplete information induced by the mechanism is given by using the types spaces $T_i$ , the action spaces $X_i$ , and the utilities $u_i(t_i,x_1,...,x_n)=v_i(t_i,a(x_1,...,x_n))-p_i(x_1,...,x_n)$ .
+
+(ii)The mechanism implements a choice function $f:T_1\times...\times T_n\rightarrow A$ in dominant strategies if for some dominant strategy equilibrium $s_1,...,s_n$ of the induced game , where $s_i:T_i\rightarrow X_i$ , we have that for all $t_1,...,t_n$ , $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ .
+
+\end{defn}
+
+\begin{pro}[Revelation Principle]
+If there exists an arbitrary mechanism that implements f in dominant strategies , then there exists an incentive compatible mechanism that implements f. The payments of the players in the incentive compatible mechanism are identical to those , obtained at equilibrium , of the original mechanism.
+\end{pro}
+
+\begin{proof}
+The new mechanism will simply simulate the equilibrium strategies of the players . That is , let $s_1,...,s_n$ be a dominant strategy equilibrium of the original mechanism , we define a new direct revelation mechanism : $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ and $p_i'(t_1,...,t_n)=p_i(s_1(t_1),...,s_n(t_n))$ . Now since each $s_i$ is a dominant strategy for player $i$ , then for every $t_i,x_{-i},x_i'$ we have that $v_i(t_i,a(s_i(t_i),x_{-i}))-p_i(s_i(t_i),x_{-i})\ge v_i(t_i,a(x_i',x_{-i}))-p_i(x_i',x_{-i})$ . Thus in particular this is true for all $x_{-i}=s_{-i}(t_{-i})$ and any $x_i'=s_i(t_i')$ , which gives the definition of incentive compatibility of the mechanism $(f,p_1',...,p_n')$ .
+
+\end{proof}
+\end{document}

@@ -91,13 +91,10 @@ A game with(independent private values and) strict incomplete information for a 
 
 (c)an alternative set $A$ ,
 
-(d)players' valuations functions $v_i:T_i\times A\rightarrow\mathbb{R}$ ,
+(d)an outcome function $a:X_1\times...\times X_n\rightarrow A$ and ,
 
-(e)an outcome function $a:X_1\times...\times X_n\rightarrow A$ and ,
 
-(f)payment functions $p_1,...,p_n$ , where $p_i:X_1\times...\times X_n\rightarrow\mathbb{R}$ .
-
-The game with strict incomplete information induced by the mechanism is given by using the types spaces $T_i$ , the action spaces $X_i$ , and the utilities $u_i(t_i,x_1,...,x_n)=v_i(t_i,a(x_1,...,x_n))-p_i(x_1,...,x_n)$ .
+The game with strict incomplete information induced by the mechanism is given by using the types spaces $T_i$ , the action spaces $X_i$ , and the utilities $u_i(t_i,x_1,...,x_n)$ .
 
 (ii)The mechanism implements a choice function $f:T_1\times...\times T_n\rightarrow A$ in dominant strategies if for some dominant strategy equilibrium $s_1,...,s_n$ of the induced game , where $s_i:T_i\rightarrow X_i$ , we have that for all $t_1,...,t_n$ , $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ .
 
@@ -108,7 +105,7 @@ If there exists an arbitrary mechanism that implements f in dominant strategies 
 \end{pro}
 
 \begin{proof}
-The new mechanism will simply simulate the equilibrium strategies of the players . That is , let $s_1,...,s_n$ be a dominant strategy equilibrium of the original mechanism , we define a new direct revelation mechanism : $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ and $p_i'(t_1,...,t_n)=p_i(s_1(t_1),...,s_n(t_n))$ . Now since each $s_i$ is a dominant strategy for player $i$ , then for every $t_i,x_{-i},x_i'$ we have that $v_i(t_i,a(s_i(t_i),x_{-i}))-p_i(s_i(t_i),x_{-i})\ge v_i(t_i,a(x_i',x_{-i}))-p_i(x_i',x_{-i})$ . Thus in particular this is true for all $x_{-i}=s_{-i}(t_{-i})$ and any $x_i'=s_i(t_i')$ , which gives the definition of incentive compatibility of the mechanism $(f,p_1',...,p_n')$ .
+The new mechanism will simply simulate the equilibrium strategies of the players . That is , let $s_1,...,s_n$ be a dominant strategy equilibrium of the original mechanism , we define a new direct revelation mechanism : $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ . Now since each $s_i$ is a dominant strategy for player $i$ , then for every $t_i,x_{-i},x_i'$ we have that $u_i(t_i,a(s_i(t_i),x_{-i}))\ge u_i(t_i,a(x_i',x_{-i}))$ . Thus in particular this is true for all $x_{-i}=s_{-i}(t_{-i})$ and any $x_i'=s_i(t_i')$ , which gives the definition of incentive compatibility of the mechanism $(f,u_1',...,u_n')$ .
 
 \end{proof}
 \end{document}

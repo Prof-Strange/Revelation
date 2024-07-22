@@ -41,25 +41,6 @@
 % ----------------------------------------------------------------
 \begin{document}
 
-\begin{defn}
-Let $A$ be an object set.We define a total order on $A$ by the one-to-one mapping
-$$\tau:A\rightarrow \{1,2,...,|A|\}$$
-that is,$\forall x\not=y\in A,x<y\Leftrightarrow \tau(x)<\tau(y)$.
-
-Let $L$ be the set that contains all of the $\tau$ .
-\end{defn}
-
-\begin{defn}
-A function $f:L^n\rightarrow A$ is called a choice function.
-\end{defn}
-
-\begin{defn}
-A choice function $f$ can be $strategically\quad manipulated$ by voter $i$ if for some $\tau_1,...,\tau_n\in L$ and some $\tau'_i\in L$ we have that $\tau_i(a)<\tau_i(a')$ where $a=f(\tau_1,...,\tau_n)$ and $a'=f(\tau_1,...\tau'_i,...,\tau_n)$ . That is, voter $i$ that prefers $a'$ to $a$ can ensure that $a'$ gets chosen rather than $a$ by strategically misrepresenting his preferences to be $\tau'_i$ rather than $\tau_i$ . $f$ is called $incentive\quad compatible$ if it cannot be manipulated.
-\end{defn}
-
-\begin{defn}
-A choice function $f$ is monotone if $f(\tau_1,...,\tau_i,...,\tau_n)=a\not=a'=f(\tau_1,...,\tau'_i,...,\tau_n)$ implies($\Rightarrow$) that $\tau_i(a')<\tau_i(a)$ and $\tau'_i(a)<\tau'_i(a')$ . That is if the choice changed from $a$ to $a'$ when a single voter $i$ changed his vote from $\tau_i$ to $\tau'_i$ then it must be because he switched his preference between $a$ and $a'$ .
-\end{defn}
 
 
 \begin{defn}

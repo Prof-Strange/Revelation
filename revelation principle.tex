@@ -66,6 +66,23 @@ A choice function $f$ is monotone if $f(\tau_1,...,\tau_i,...,\tau_n)=a\not=a'=f
 Let $\vec{v}=(v_1,...,v_n)$ be an $n$-dimentional vector. We will denote the $(n-1)$-dimentional vector in which the $i$-th coordinate is removed by $\vec{v_{-i}}=(v_1,...,v_{i-1},v_{i+1},...,v_n)$ . Thus we have three equivalent notations:$\vec{v}=(v_1,...,v_n)=(v_i,\vec{v_{-i}})$ .
 \end{defn}
 
+
+\begin{defn}
+A (direct revelation) mechanism is a choice function $f$ and a vector of utility functions $u_1^f,...,u_n^f$
+\begin{eqnarray}
+f:V_1\times ... \times V_n \rightarrow A\\
+u_i^f :V_1\times ... \times V_n \rightarrow \mathbb{R}
+\end{eqnarray}
+\end{defn}
+
+
+\begin{defn}
+A mechanism $(f,u_1^f,...,u_n^f) $ is called incentive compatible if $\forall i, \exists  v_i \in V_i, \forall v_i' \in V_i,  $  % the second quantifier should not be \froall but be \exists
+\begin{equation}
+u_i^f(v_i,v_{-i} )\geq u_i^f(v'_i,v_{-i} )
+\end{equation}
+\end{defn}
+
 \begin{defn}
 A game with(independent private values and) strict incomplete information for a set of $n$ players is given by the following ingredients:
 
@@ -73,13 +90,17 @@ A game with(independent private values and) strict incomplete information for a 
 
 (ii)For every player $i$ , a set of $types$ $T_i$ . A value $t_i\in T_i$ is the private information that $i$ has.
 
-(iii)For every player $i$ , a $utility$ $function$ $u_i:T_i\times X_1\times ...\times X_n\rightarrow \mathbb{R}$ , where $u_i(t_i,x_1,...,x_n)$ is the utility achieved by player $i$ , if his type is $t_i$ , and the profile of actions taken by all players is $x_1,...,x_n$ . 
+(iii)For every player $i$ , a $utility$ $function$ $u_i: T_i \times X_1\times ...\times X_n\rightarrow \mathbb{R}$ , where $u_i(t_i,x_1,...,x_n)$ is the utility achieved by player $i$ , if his type is $t_i$, and the profile of actions taken by all players is $x_1,...,x_n$ . 
 \end{defn}
 
 \begin{defn}
 (i)A strategy of a player $i$ is a function $s_i:T_i\rightarrow X_i$ .
 
-(ii)A strategy $s_i$ is a (weakly) dominant strategy if for every $t_i$ we have that the action $s_i(t_i)$ is a dominant strategy in the full information game defined by $t_i$ . Formally:For all $t_i$, all$x_{-i}$ and all $x_i'$ we have that $u_i(t_i,s_i(t_i),x_{-i})\ge u_i(t_i,x_i',x_{-i})$. A profile $s_1,...,s_n$ is called a dominant strategy equilibrium if each $s_i$ is a dominant strategy.
+(ii)A strategy $s_i$ is a (weakly) dominant strategy if for every $t_i$ we have that the action $s_i(t_i)$ is a dominant strategy in the full information game defined by $t_i$ . Formally:For all $t_i$, all$x_{-i}$ and all $x_i'$ we have that
+\begin{equation}
+ u_i(t_i,  s_i(t_i),x_{-i})\ge u_i(t_i, x_i',x_{-i})
+\end{equation}
+ A profile $s_1,...,s_n$ is called a dominant strategy equilibrium if each $s_i$ is a dominant strategy.
 \end{defn}
 
 \begin{defn}
@@ -105,7 +126,19 @@ If there exists an arbitrary mechanism that implements f in dominant strategies 
 \end{pro}
 
 \begin{proof}
-The new mechanism will simply simulate the equilibrium strategies of the players . That is , let $s_1,...,s_n$ be a dominant strategy equilibrium of the original mechanism , we define a new direct revelation mechanism : $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ . Now since each $s_i$ is a dominant strategy for player $i$ , then for every $t_i,x_{-i},x_i'$ we have that $u_i(t_i,a(s_i(t_i),x_{-i}))\ge u_i(t_i,a(x_i',x_{-i}))$ . Thus in particular this is true for all $x_{-i}=s_{-i}(t_{-i})$ and any $x_i'=s_i(t_i')$ , which gives the definition of incentive compatibility of the mechanism $(f,u_1',...,u_n')$ .
+The new mechanism will simply simulate the equilibrium strategies of the players . That is , let $s_1,...,s_n$ be a dominant strategy equilibrium of the original mechanism , we define a new direct revelation mechanism : 
+\begin{eqnarray}
+f(t_1,...,t_n):=a(s_1(t_1),...,s_n(t_n)) \\
+ u_i^f(t_1,...,t_n):=u_i(t(i), s_1(t_1),...,s_n(t_n)), \text{ where } t(i) := t_i
+\end{eqnarray}
+
+ . Now since each $s_i$ is a dominant strategy for player $i$ , then for every $t_i,x_{-i},x_i'$ we have that 
+\begin{eqnarray}
+ u_i(t(i),   s_i(t_i),x_{-i})\ge u_i(t(i),x_i',x_{-i})\\
+ u_i\left(t(i),   s_i(t_i),s_{-i}(t_{-i})  \right) \ge  u_i\left(t(i),   s_i(t'_i),s_{-i}(t_{-i})  \right) \\
+ u_i^f(t_i,t_{-i} )\geq u_i^f(t'_i,t_{-i} )
+\end{eqnarray}
+, which gives the definition of incentive compatibility of the mechanism $(f,u_1^f,...,u_n^f)$ .
 
 \end{proof}
 \end{document}

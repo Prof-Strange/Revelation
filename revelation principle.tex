@@ -122,4 +122,31 @@ f(t_1,...,t_n):=a(s_1(t_1),...,s_n(t_n)) \\
 , which gives the definition of incentive compatibility of the mechanism $(f,u_1^f,...,u_n^f)$ .
 
 \end{proof}
+
+
+\section{Preorder on Syntheticness}
+\begin{defn}
+\emph{Measured data} is defined as data collected directly from measurements or experiments without any modifications from algorithms.
+\end{defn}
+
+\begin{defn}
+\emph{Synthetic data} is defined as data that is \emph{generated algorithmicly with prompt} or through algorithmic simulations based on models rather than being directly measured or collected from real-world events.
+\end{defn}
+
+
+However, things are not purely black-and-white in real world. Even if some data came right out from a measurement instrument, it still may not be ``purely-measured'', because certain instruments have built-in denoise filter algorithms. Thus, the distinction between measured data and synthetic data is practically ``fuzzy'', with the following preorder on syntheticness. 
+\begin{defn}
+For certain algorithm $f$,
+\begin{equation}
+a \succeq_f b \iff  a = f(b)
+\end{equation}
+In particular, if $f$ is not bijective, then $a \succ_f b$. If $f$ is bijective, then $f$ is called a transform and $a\sim_f b$.
+\end{defn}
+
+
+
+
+
+
+
 \end{document}

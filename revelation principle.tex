@@ -40,16 +40,27 @@
 \newcommand{\SSS}{\stackrel}
 % ----------------------------------------------------------------
 \begin{document}
+\title[Multi-data-source AI training mechanism and the Revelation Principle ]
+{Multi-data-source AI training mechanism and the Revelation Principle }
+\author{}
+\address{}
+\email{}
+\begin{abstract}
 
+\end{abstract}
+\subjclass
+\keywords
+\maketitle
 
-
+\section{Introduction}
+\section{The Proof of the Revelation Principle}
 \begin{defn}
 Let $\vec{v}=(v_1,...,v_n)$ be an $n$-dimentional vector. We will denote the $(n-1)$-dimentional vector in which the $i$-th coordinate is removed by $\vec{v_{-i}}=(v_1,...,v_{i-1},v_{i+1},...,v_n)$ . Thus we have three equivalent notations:$\vec{v}=(v_1,...,v_n)=(v_i,\vec{v_{-i}})$ .
 \end{defn}
 
 
 \begin{defn}
-A (direct revelation) mechanism is a choice function $f$ and a vector of utility functions $u_1^f,...,u_n^f$
+An original AGI mechanism is a choice function $f$ and a vector of utility functions $u_1^f,...,u_n^f$
 \begin{eqnarray}
 f:V_1\times ... \times V_n \rightarrow A\\
 u_i^f :V_1\times ... \times V_n \rightarrow \mathbb{R}
@@ -58,26 +69,26 @@ u_i^f :V_1\times ... \times V_n \rightarrow \mathbb{R}
 
 
 \begin{defn}
-A mechanism $(f,u_1^f,...,u_n^f) $ is called incentive compatible if $\forall i, \exists  v_i \in V_i, \forall v_i' \in V_i,  $  % the second quantifier should not be \froall but be \exists
+An original AGI mechanism $(f,u_1^f,...,u_n^f) $ is called incentive compatible if $\forall i, \exists  v_i \in V_i, \forall v_i' \in V_i,  $  % the second quantifier should not be \froall but be \exists
 \begin{equation}
 u_i^f(v_i,v_{-i} )\geq u_i^f(v'_i,v_{-i} )
 \end{equation}
 \end{defn}
 
 \begin{defn}
-A game with(independent private values and) strict incomplete information for a set of $n$ players is given by the following ingredients:
+A trained AGI with(independent private values and) strict incomplete information for a set of $n$ trainers is given by the following ingredients:
 
-(i)For every player $i$ , a set of $actions$ $X_i$.
+(i)For every trainer $i$ , a set of $actions$ $X_i$.
 
-(ii)For every player $i$ , a set of $types$ $T_i$ . A value $t_i\in T_i$ is the private information that $i$ has.
+(ii)For every trainer $i$ , a set of $data$ $T_i$ . A value $t_i\in T_i$ is the private information that $i$ has.
 
-(iii)For every player $i$ , a $utility$ $function$ $u_i: T_i \times X_1\times ...\times X_n\rightarrow \mathbb{R}$ , where $u_i(t_i,x_1,...,x_n)$ is the utility achieved by player $i$ , if his type is $t_i$, and the profile of actions taken by all players is $x_1,...,x_n$ . 
+(iii)For every trainer $i$ , a $utility$ $function$ $u_i: T_i \times X_1\times ...\times X_n\rightarrow \mathbb{R}$ , where $u_i(t_i,x_1,...,x_n)$ is the utility achieved by player $i$ , if his type is $t_i$, and the profile of actions taken by all trainers is $x_1,...,x_n$ . 
 \end{defn}
 
 \begin{defn}
-(i)A strategy of a player $i$ is a function $s_i:T_i\rightarrow X_i$ .
+(i)A strategy of a trainer $i$ is a function $s_i:T_i\rightarrow X_i$ .
 
-(ii)A strategy $s_i$ is a (weakly) dominant strategy if for every $t_i$ we have that the action $s_i(t_i)$ is a dominant strategy in the full information game defined by $t_i$ . Formally:For all $t_i$, all$x_{-i}$ and all $x_i'$ we have that
+(ii)A strategy $s_i$ is a (weakly) dominant strategy if for every $t_i$ we have that the action $s_i(t_i)$ is a dominant strategy in the full information training defined by $t_i$ . Formally:For all $t_i$, all$x_{-i}$ and all $x_i'$ we have that
 \begin{equation}
  u_i(t_i,  s_i(t_i),x_{-i})\ge u_i(t_i, x_i',x_{-i})
 \end{equation}
@@ -85,29 +96,29 @@ A game with(independent private values and) strict incomplete information for a 
 \end{defn}
 
 \begin{defn}
-(i)A mechanism for $n$ players is given by
+(i)A synthetic training for $n$ trainers is given by
 
-(a)players' type spaces $T_1,...,T_n$ ,
+(a)trainers' data spaces $T_1,...,T_n$ ,
 
-(b)players' action spaces $X_1,...,X_n$ ,
+(b)trainers' action spaces $X_1,...,X_n$ ,
 
 (c)an alternative set $A$ ,
 
 (d)an outcome function $a:X_1\times...\times X_n\rightarrow A$ and ,
 
 
-The game with strict incomplete information induced by the mechanism is given by using the types spaces $T_i$ , the action spaces $X_i$ , and the utilities $u_i(t_i,x_1,...,x_n)$ .
+The AGI with strict incomplete information induced by the synthetic training is given by using the data spaces $T_i$ , the action spaces $X_i$ , and the utilities $u_i(t_i,x_1,...,x_n)$ .
 
-(ii)The mechanism implements a choice function $f:T_1\times...\times T_n\rightarrow A$ in dominant strategies if for some dominant strategy equilibrium $s_1,...,s_n$ of the induced game , where $s_i:T_i\rightarrow X_i$ , we have that for all $t_1,...,t_n$ , $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ .
+(ii)The synthetic training implements a choice function $f:T_1\times...\times T_n\rightarrow A$ in dominant strategies if for some dominant strategy equilibrium $s_1,...,s_n$ of the induced game , where $s_i:T_i\rightarrow X_i$ , we have that for all $t_1,...,t_n$ , $f(t_1,...,t_n)=a(s_1(t_1),...,s_n(t_n))$ .
 
 \end{defn}
 
 \begin{pro}[Revelation Principle]
-If there exists an arbitrary mechanism that implements f in dominant strategies , then there exists an incentive compatible mechanism that implements f. The payments of the players in the incentive compatible mechanism are identical to those , obtained at equilibrium , of the original mechanism.
+If there exists an arbitrary synthetic training AGI that implements f in dominant strategies , then there exists an incentive compatible original AGI that implements f. 
 \end{pro}
 
 \begin{proof}
-The new mechanism will simply simulate the equilibrium strategies of the players . That is , let $s_1,...,s_n$ be a dominant strategy equilibrium of the original mechanism , we define a new direct revelation mechanism : 
+The new AGI will simply simulate the equilibrium strategies of the players . That is , let $s_1,...,s_n$ be a dominant strategy equilibrium of the synthetic training AGI , we define a new direct revelation AGI : 
 \begin{eqnarray}
 f(t_1,...,t_n):=a(s_1(t_1),...,s_n(t_n)) \\
  u_i^f(t_1,...,t_n):=u_i(t(i), s_1(t_1),...,s_n(t_n)), \text{ where } t(i) := t_i
@@ -119,7 +130,43 @@ f(t_1,...,t_n):=a(s_1(t_1),...,s_n(t_n)) \\
  u_i\left(t(i),   s_i(t_i),s_{-i}(t_{-i})  \right) \ge  u_i\left(t(i),   s_i(t'_i),s_{-i}(t_{-i})  \right) \\
  u_i^f(t_i,t_{-i} )\geq u_i^f(t'_i,t_{-i} )
 \end{eqnarray}
-, which gives the definition of incentive compatibility of the mechanism $(f,u_1^f,...,u_n^f)$ .
+, which gives the definition of incentive compatibility of the original AGI $(f,u_1^f,...,u_n^f)$ .
 
 \end{proof}
+
+tips:if $\forall s_i$ is an injection , then the original AGI is equal to the synthetic training AGI given by:
+$$\forall x_i\in Ims_i,a(x_1,...,x_n):=f(s_1^{-1}(x_1),...,s_n^{-1}(x_n))$$
+
+\section{Preorder on Syntheticness}
+\begin{defn}
+\emph{Measured data} is defined as data collected directly from measurements or experiments without any modifications from algorithms.
+\end{defn}
+
+\begin{defn}
+\emph{Synthetic data} is defined as data that is \emph{generated algorithmicly with prompt} or through algorithmic simulations based on models rather than being directly measured or collected from real-world events.
+\end{defn}
+
+
+However, things are not purely black-and-white in real world. Even if some data came right out from a measurement instrument, it still may not be ``purely-measured'', because certain instruments have built-in denoise filter algorithms. Thus, the distinction between measured data and synthetic data is practically ``fuzzy'', with the following preorder on syntheticness. 
+\begin{defn}
+For certain algorithm $f$,
+\begin{equation}
+a \succeq_f b \iff  a = f(b)
+\end{equation}
+In particular, if $f$ is not bijective, then $a \succ_f b$. If $f$ is bijective, then $f$ is called a transform and $a\sim_f b$.
+\end{defn}
+
+
+
+
+
+\begin{thm}
+Suppose synthetic data is generated from two distinct AGI models $a_1,a_2$, with synthesis function $s_1(t_1,a_1) , s_2(t_2,a_2)$. Then $\exists f$ as a training mechanism, such that $f(....)=a_0$ with $a_0\succeq a_1,a_2$.
+\end{thm}
+Proof, hint an AGI model is a loss-less compression (bijective) on some observed data $t$.
+
+\begin{thebibliography}{}
+
+\end{thebibliography}
+
 \end{document}
